@@ -1,50 +1,52 @@
-# Welcome to your Expo app 👋
+# App Backend
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A Node.js/Express backend server providing authentication APIs for the RN App.
 
-## Get started
+## Features
 
-1. Install dependencies
+- User authentication (login/register)
+- JWT token-based authentication
+- MongoDB database integration
+- Input validation
+- Password hashing with bcrypt
 
-   ```bash
-   npm install
-   ```
+## Prerequisites
 
-2. Start the app
+- Node.js
+- MongoDB
+- npm
 
-   ```bash
-    npx expo start
-   ```
+## Installation
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+1. Clone the repository
+2. Install dependencies:
+```sh
+npm install express
+npm install nodemon
+npm install mongoose
+npm install cors
+npm install bcrypt
+npm install jsonwebtoken
+```
+3. Create a `.env` file in the root directory and add the following environment variables:
+```sh
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+PORT=3000
+HOST=your_host_ip
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Usage
+- Start the server:
+```sh
+npm start
+```
+- The server will run on `http://localhost:3000`
 
-## Learn more
+## API Endpoints
 
-To learn more about developing your project with Expo, look at the following resources:
+### Auth Routes
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- POST `/api/auth/register`
+- POST `/api/auth/login`
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
